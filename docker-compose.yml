@@ -16,7 +16,6 @@ services:
     volumes:
       - ./data:/app/data
     environment:
-      - NODE_ENV=production
       - DOMAIN=$DOMAIN
       - PORT=$PORT
       - ASSETS_DIR=/world/assets
