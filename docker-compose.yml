@@ -6,7 +6,7 @@ services:
     ports:
       - "8080:80"
       - "8443:443"
-      - "3000:3000"
+      - "3011:3011"
     volumes:
       - ./data:/app/data
       - ./logs:/var/log/nginx

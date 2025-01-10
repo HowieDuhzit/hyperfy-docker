@@ -34,7 +34,7 @@ COPY .env.example .env
 RUN pnpm install
 
 # Expose ports
-EXPOSE 80 443 3000
+EXPOSE 80 443 3011
 
 # Start services using the start script
 CMD ["/start.sh"] 
