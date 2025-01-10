@@ -7,4 +7,4 @@ nginx
 #pm2 start npm --name "hyperfy" --interpreter bash -- start
 RUN npm run dev 
 # Keep the container running
-pm2 logs 
+#pm2 logs 
