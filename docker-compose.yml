@@ -3,6 +3,10 @@
 # tags: ThreeJS,NODE,Hyperfy,Metaverse,Self-Hosted
 # logo: svgs/logo-icon.svg
 # port: 3011
+# twitter:card: summary_large_image
+# twitter:title: Hyperfy Self-Hosted World
+# twitter:description: Deploy your own persistent 3D world with Hyperfy - a standalone metaverse platform
+# twitter:image: https://raw.githubusercontent.com/hyperfy-xyz/hyperfy/main/public/images/preview.png
 version: '3.8'
 
 services:
