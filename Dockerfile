@@ -1,6 +1,5 @@
 # Use Node.js 22.11.0 as the base image
-FROM node:22.11.0-slim
-
+FROM node:22.11.0
 # Install required dependencies
 RUN apt-get update && apt-get install -y \
     git \
