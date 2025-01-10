@@ -8,11 +8,10 @@ version: '3.8'
 services:
   hyperfy:
     image: howieduhzit/hyperfy-docker:main
-    #build: .
     ports:
       - "8080:80"
       - "8443:443"
-      - "3011:3011"
+      - "$PORT:$PORT"
     volumes:
       - ./data:/app/data
       - ./logs:/var/log/nginx
