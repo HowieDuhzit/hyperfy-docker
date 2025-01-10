@@ -1,1 +1,15 @@
- 
+version: '3.8'
+
+services:
+  hyperfy:
+    build: .
+    ports:
+      - "8080:80"
+      - "8443:443"
+      - "3000:3000"
+    volumes:
+      - ./data:/app/data
+      - ./logs:/var/log/nginx
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped 
