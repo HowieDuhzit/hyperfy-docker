@@ -12,7 +12,9 @@ version: '3.8'
 services:
   hyperfy:
     image: howieduhzit/hyperfy-docker:main
-    build: .
+    build:
+      context: .
+      dockerfile: ./Dockerfile
     ports:
       - "8080:80"
       - "8443:443"
