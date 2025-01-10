@@ -3,6 +3,5 @@ WORKDIR /app
 RUN git clone https://github.com/hyperfy-xyz/hyperfy.git .
 COPY . /app
 COPY .env.example /app/.env
-RUN npm install
-EXPOSE 3000
+RUN cd /app && npm install
 CMD cd /app && npm run dev 

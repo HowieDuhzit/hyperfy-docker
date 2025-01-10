@@ -12,7 +12,7 @@ services:
   hyperfy:
     image: howieduhzit/hyperfy:main
     ports:
-      - 3000
+      - ${PORT}
     volumes:
       - ./data:/app/data
     environment:
