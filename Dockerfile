@@ -6,6 +6,7 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /app
 RUN git clone https://github.com/HowieDuhzit/hyperfy .
 COPY . /app
+COPY .env.example /app/.env
 RUN npm install
 EXPOSE 3000
 CMD cd /app && npm run dev 
