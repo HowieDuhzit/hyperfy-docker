@@ -4,7 +4,7 @@ RUN apt-get update && apt-get install -y \
     libgl1-mesa-dri libgl1-mesa-glx libgles2-mesa libosmesa6 mesa-utils \
     && rm -rf /var/lib/apt/lists/*
 WORKDIR /app
-RUN git clone https://github.com/HowieDuhzit/hyperfy .
+RUN git clone https://github.com/hyperfy-xyz/hyperfy.git .
 COPY . /app
 COPY .env.example /app/.env
 RUN npm install
