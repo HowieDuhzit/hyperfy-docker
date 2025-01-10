@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# Start Nginx
 nginx
 
 # Start the Hyperfy application
