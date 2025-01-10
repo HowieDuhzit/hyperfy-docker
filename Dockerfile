@@ -4,11 +4,21 @@ FROM node:22.11.0
 RUN apt-get update && apt-get install -y \
     git \
     nginx \
+    build-essential \
+    python3 \
+    make \
+    g++ \
     curl \
+    xvfb \
+    libgl1-mesa-dri \
+    libgl1-mesa-glx \
+    libgles2-mesa \
+    libosmesa6 \
+    mesa-utils \
     && rm -rf /var/lib/apt/lists/*
 
 # Install pnpm
-RUN corepack enable && corepack prepare pnpm@latest --activate
+#RUN corepack enable && corepack prepare pnpm@latest --activate
 
 # Create app directory
 WORKDIR /app
@@ -25,13 +35,13 @@ COPY start.sh /start.sh
 RUN chmod +x /start.sh
 
 # Install PM2 globally
-RUN npm install -g pm2
+#RUN npm install -g pm2
 
 # Copy environment file
 COPY .env.example .env
 
 # Install dependencies
-RUN pnpm install
+RUN npm install
 
 # Expose ports
 EXPOSE 80 443 3011
