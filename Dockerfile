@@ -1,4 +1,6 @@
 FROM node:22.11.0
+
+# Install required dependencies
 RUN apt-get update && apt-get install -y \
     git \
     nginx \
@@ -15,15 +17,29 @@ RUN apt-get update && apt-get install -y \
     mesa-utils \
     && rm -rf /var/lib/apt/lists/*
 
+# Set working directory
 WORKDIR /app
+
+# Clone Hyperfy repository
 RUN git clone https://github.com/hyperfy-xyz/hyperfy.git .
+
+# Copy configuration files
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY default.conf /etc/nginx/conf.d/default.conf
 COPY start.sh /start.sh
-RUN chmod +x /start.sh
 COPY .env.example .env
+
+# Make start script executable
+RUN chmod +x /start.sh
+
+# Install dependencies
 RUN npm install
+
+# Build the application (if needed)
+RUN npm run build
+
+# Expose ports
 EXPOSE 80 443 1337
-RUN nginx
-RUN npm run dev
-RUN tail -f /dev/null 
+
+# Use start.sh as entrypoint
+CMD ["/start.sh"] 
