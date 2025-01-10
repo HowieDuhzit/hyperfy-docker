@@ -1,10 +1,4 @@
 #!/bin/bash
-
-# Start Nginx
-nginx
-
-# Start the Hyperfy application
+/usr/sbin/nginx
 cd /app && npm run dev
-
-# Keep the container running
 tail -f /dev/null 
