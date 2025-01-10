@@ -35,9 +35,6 @@ RUN chmod +x /start.sh
 # Install dependencies
 RUN npm install
 
-# Build the application (if needed)
-RUN npm run build
-
 # Expose ports
 EXPOSE 80 443 1337
 
