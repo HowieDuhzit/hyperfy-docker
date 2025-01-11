@@ -6,5 +6,6 @@ COPY .env.example /app/.env
 #COPY .env /app/.env
 #WORKDIR /app
 RUN npm install
+COPY . /app
 #WORKDIR /app
-CMD npm run dev 
+CMD  cd /app && npm run dev 
