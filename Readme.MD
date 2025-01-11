@@ -23,36 +23,42 @@ Coolify is a self-hosted platform that simplifies the deployment of applications
 
 ## Manual Installation with Docker Compose
 
-If you prefer to install Hyperfy manually, follow these steps:
-
 1. **Install Docker and Docker Compose:**
-   - Ensure Docker and Docker Compose are installed on your server. You can find installation instructions on the [Docker website](https://docs.docker.com/get-docker/).
+   - Ensure Docker and Docker Compose are installed on your server.
 
 2. **Clone the Repository:**
-   - Clone the repository containing the `docker-compose.yml` file to your server.
+   - Clone the repository to your server.
 
 3. **Configure Environment Variables:**
-   - Create a `.env` file in the same directory as your `docker-compose.yml` file.
-   - Add the following environment variables to the `.env` file:
+   - Copy `.env.example` to `.env`
+   - Update the following variables in your `.env` file:
      ```env
-     PUBLIC_WS_URL=your_websocket_url
-     PUBLIC_API_URL=your_api_url
-     PUBLIC_ASSETS_URL=your_assets_url
+     # Set your domain
+     DOMAIN=your-domain.com
+     
+     # Customize ports if needed
+     HTTP_PORT=8080
+     HTTPS_PORT=8443
+     APP_PORT=3011
      ```
 
 4. **Run Docker Compose:**
-   - Navigate to the directory containing the `docker-compose.yml` file.
-   - Run the following command to start the Hyperfy service:
-     ```bash
-     docker-compose up -d
-     ```
+   ```bash
+   docker-compose up -d
+   ```
 
 5. **Access the Service:**
-   - Once the containers are up and running, you can access the Hyperfy service on your server's IP address at port 3011.
+   - HTTP: http://your-domain.com:${HTTP_PORT}
+   - HTTPS: https://your-domain.com:${HTTPS_PORT}
+   - Application: http://your-domain.com:${APP_PORT}
 
 ## Additional Information
 
-- **Ports:** The service is exposed on ports 8080, 8443, and 3011. Ensure these ports are open on your firewall.
-- **Data Persistence:** The service uses volumes to persist data and logs. Ensure the `./data` and `./logs` directories are writable.
+- **Ports:** 
+  - HTTP: Default 8080 (configurable via HTTP_PORT)
+  - HTTPS: Default 8443 (configurable via HTTPS_PORT)
+  - Application: Default 3011 (configurable via APP_PORT)
+- **Domain:** Configure your domain in the .env file
+- **Data Persistence:** The service uses volumes to persist data and logs
 
 For more information, refer to the [Hyperfy GitHub repository](https://github.com/hyperfy-xyz/hyperfy).
