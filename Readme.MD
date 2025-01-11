@@ -1,5 +1,4 @@
 # Hyperfy Deployment Guide
-#TOTALLY DEVELOPMENT ONLY DO NOT DEPLOY TO PRODUCTION
 
 This guide provides instructions on how to deploy the Hyperfy application using Docker Compose manually and with Coolify.
 
