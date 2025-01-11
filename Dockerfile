@@ -2,13 +2,12 @@ FROM node:20-alpine
 
 WORKDIR /app
 
-COPY package.json pnpm-lock.yaml ./
+COPY package.json package-lock.json ./
 
-RUN npm install -g pnpm && \
-    pnpm install --frozen-lockfile
+RUN npm ci
 
 COPY . .
 
 EXPOSE ${PORT}
 
-CMD ["pnpm", "start"] 
+CMD ["npm", "start"] 
