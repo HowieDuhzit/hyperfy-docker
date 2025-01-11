@@ -16,9 +16,9 @@ services:
       - PORT=$PORT
       - JWT_SECRET=$JWT_SECRET
       - ADMIN_CODE=$ADMIN_CODE
-      - PUBLIC_WS_URL=http://${DOMAIN}:${PORT}/ws
-      - PUBLIC_API_URL=http://${DOMAIN}:${PORT}/api
-      - PUBLIC_ASSETS_URL=http://${DOMAIN}:${PORT}/assets
+      - PUBLIC_WS_URL=http://0.0.0.0:${PORT}/ws
+      - PUBLIC_API_URL=http://0.0.0.0:${PORT}/api
+      - PUBLIC_ASSETS_URL=http://0.0.0.0:${PORT}/assets
     volumes:
       - ./data:/app/data
     restart: unless-stopped 
