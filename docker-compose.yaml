@@ -16,7 +16,6 @@ services:
       - ./logs:/var/log/nginx
     environment:
       - NODE_ENV=production
-      - APP_PORT=${APP_PORT}
       - DOMAIN=${DOMAIN}
       - PORT=${APP_PORT}
       - HTTP_PORT=${HTTP_PORT}
