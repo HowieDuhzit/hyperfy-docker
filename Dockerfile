@@ -7,4 +7,5 @@ RUN npm install
 RUN npm run build
 COPY .env.example .env
 EXPOSE ${PORT}
+RUN ls -la
 CMD ["npm", "run", "start"] 
