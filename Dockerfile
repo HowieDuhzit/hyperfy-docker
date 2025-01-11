@@ -3,8 +3,8 @@ WORKDIR /app
 RUN git clone https://github.com/hyperfy-xyz/hyperfy.git /app
 COPY . /app
 COPY .env.example .env
-COPY .env /app/.env
-WORKDIR /app
+#COPY .env /app/.env
+#WORKDIR /app
 RUN npm install
-WORKDIR /app
-CMD npm run start 
+#WORKDIR /app
+CMD npm run dev 
