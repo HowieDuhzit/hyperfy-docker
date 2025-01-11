@@ -11,4 +11,4 @@ EXPOSE ${PORT}
 RUN ls -la
 COPY . /app
 
-CMD ["npm", "run", "start"] 
+CMD cd /app && npm run dev
