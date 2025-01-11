@@ -7,5 +7,5 @@ COPY .env.example .env
 COPY . /app
 RUN cd /app && ls -la
 RUN cd /app && npm run build; exit 0
-EXPOSE ${PORT}
+EXPOSE 3000
 CMD cd /app && npm run dev
