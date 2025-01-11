@@ -8,6 +8,6 @@ RUN git clone https://github.com/hyperfy-xyz/hyperfy.git .
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY default.conf /etc/nginx/conf.d/default.conf
 COPY .env.example /app/.env
-EXPOSE ${HTTP_PORT} ${HTTPS_PORT} ${APP_PORT}
+EXPOSE 80 443 3000
 RUN npm install
 CMD /usr/sbin/nginx && cd /app && npm run dev 
