@@ -7,7 +7,7 @@ version: '3.8'
 
 services:
   hyperfy:
-    image: howieduhzit/hyperfy-docker:main
+    image: docker.io/howieduhzit/hyperfy-docker:main
 
     ports:
       - "8080:80"
